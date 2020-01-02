@@ -11,6 +11,8 @@ morgan.token('type', function (request) {
 })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :type'))
 app.use(cors())
+
+// heroku handling static frontend build using express
 app.use(express.static('build'))
 
 let persons = [
